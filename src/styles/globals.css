@@ -2,7 +2,7 @@
 
 :root {
   color: #111111;
-  background: #ffffff;
+  background: #Fdfcfb;
   font-family: "Inter", system-ui, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,7 +22,24 @@ body {
   margin: 0;
   min-width: 320px;
   overflow-x: hidden;
-  background: #ffffff;
+  background: #Fdfcfb;
+  position: relative;
+}
+
+/* Premium layered background system */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background: 
+    radial-gradient(ellipse 1200px 800px at 20% 10%, rgba(238, 228, 214, 0.15), transparent),
+    radial-gradient(ellipse 1000px 1000px at 80% 50%, rgba(247, 243, 238, 0.2), transparent),
+    radial-gradient(ellipse 800px 600px at 40% 90%, rgba(232, 222, 207, 0.12), transparent);
 }
 
 a {
@@ -51,6 +68,114 @@ a {
 
 .focus-ring:focus-visible {
   outline-color: #111111;
+}
+
+.editorial-surface {
+  isolation: isolate;
+}
+
+.editorial-surface::before,
+.editorial-surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.surface-about {
+  background:
+    radial-gradient(ellipse 760px 520px at 78% 18%, rgba(238, 228, 214, 0.24), transparent 68%),
+    radial-gradient(ellipse 620px 420px at 18% 92%, rgba(255, 255, 255, 0.82), transparent 74%),
+    linear-gradient(180deg, #fffefd 0%, #fffdfb 48%, #fbf8f4 100%);
+}
+
+.surface-about::before {
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.surface-about::after {
+  opacity: 0.42;
+  background:
+    radial-gradient(ellipse 520px 180px at 74% 44%, rgba(232, 222, 207, 0.18), transparent 72%),
+    linear-gradient(112deg, transparent 0 41%, rgba(17, 17, 17, 0.016) 41.15%, transparent 41.5% 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 900 900' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-90 594C128 468 188 308 366 330c152 19 214 156 414 92 100-32 145-74 232-84' fill='none' stroke='%23b8aa99' stroke-opacity='.18' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: auto, auto, cover;
+  filter: blur(14px);
+}
+
+.surface-skills {
+  background:
+    radial-gradient(ellipse 760px 520px at 12% 20%, rgba(247, 243, 238, 0.72), transparent 70%),
+    radial-gradient(ellipse 720px 460px at 86% 78%, rgba(238, 228, 214, 0.22), transparent 68%),
+    linear-gradient(180deg, #fafaf8 0%, #fbf8f4 100%);
+}
+
+.surface-skills::after {
+  opacity: 0.22;
+  background:
+    radial-gradient(ellipse 460px 180px at 72% 30%, rgba(255, 255, 255, 0.84), transparent 72%),
+    repeating-radial-gradient(ellipse at 18% 82%, rgba(17, 17, 17, 0.025) 0 1px, transparent 1px 42px);
+  filter: blur(10px);
+}
+
+.surface-projects {
+  background:
+    radial-gradient(ellipse 760px 500px at 16% 18%, rgba(238, 228, 214, 0.18), transparent 70%),
+    radial-gradient(ellipse 860px 580px at 86% 46%, rgba(247, 243, 238, 0.68), transparent 72%),
+    linear-gradient(180deg, #ffffff 0%, #fdfbf8 52%, #fbf8f4 100%);
+}
+
+.surface-projects::before {
+  opacity: 0.52;
+  background:
+    radial-gradient(ellipse 620px 280px at 20% 34%, rgba(232, 222, 207, 0.2), transparent 72%),
+    radial-gradient(ellipse 620px 300px at 82% 68%, rgba(238, 228, 214, 0.22), transparent 72%),
+    linear-gradient(126deg, transparent 12%, rgba(246, 234, 219, 0.18) 34%, transparent 58%);
+  filter: blur(48px);
+}
+
+.surface-projects::after {
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 900 900' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-70 640C160 520 194 258 416 251c206-7 283 209 552 45' fill='none' stroke='%23111111' stroke-opacity='.16' stroke-width='1'/%3E%3Cpath d='M-40 704C192 584 260 342 498 348c190 5 270 162 448 98' fill='none' stroke='%23111111' stroke-opacity='.11' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: cover;
+}
+
+.surface-experience {
+  background:
+    radial-gradient(ellipse 760px 560px at 0% 88%, rgba(238, 228, 214, 0.2), transparent 70%),
+    radial-gradient(ellipse 620px 420px at 92% 16%, rgba(255, 255, 255, 0.9), transparent 74%),
+    linear-gradient(180deg, #ffffff 0%, #fdfbf8 100%);
+}
+
+.surface-experience::after {
+  opacity: 0.34;
+  background:
+    radial-gradient(ellipse 720px 220px at 50% 50%, rgba(232, 222, 207, 0.11), transparent 72%),
+    linear-gradient(90deg, transparent, rgba(17, 17, 17, 0.016), transparent),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 900 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-60 410C120 348 236 344 378 382c172 46 282 18 562-96' fill='none' stroke='%23b8aa99' stroke-opacity='.16' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: auto, auto, cover;
+  filter: blur(20px);
+}
+
+.surface-footer {
+  background:
+    radial-gradient(ellipse 900px 560px at 50% 10%, rgba(255, 255, 255, 0.04), transparent 68%),
+    radial-gradient(ellipse 760px 460px at 88% 82%, rgba(238, 228, 214, 0.04), transparent 70%),
+    radial-gradient(ellipse 620px 360px at 8% 86%, rgba(255, 255, 255, 0.018), transparent 72%),
+    linear-gradient(180deg, #111111 0%, #0d0d0d 100%);
+}
+
+.surface-footer::before {
+  opacity: 0.16;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.34'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+.surface-footer::after {
+  box-shadow: inset 0 80px 160px rgba(0, 0, 0, 0.28), inset 0 -120px 220px rgba(0, 0, 0, 0.34);
 }
 
 @media (prefers-reduced-motion: reduce) {

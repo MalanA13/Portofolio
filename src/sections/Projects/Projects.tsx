@@ -8,8 +8,8 @@ import { staggerContainer } from "../../lib/motion";
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-32 lg:py-48 bg-white">
-      <Container size="wide">
+    <section id="projects" className="editorial-surface surface-projects relative overflow-hidden py-32 lg:py-48">
+      <Container size="wide" className="relative z-10">
         <FadeIn viewport>
           <SectionHeader
             title="Recent Projects"

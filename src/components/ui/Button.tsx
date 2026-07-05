@@ -2,11 +2,8 @@ import { cn } from "../../utils/cn";
 
 interface ButtonProps {
   children: React.ReactNode;
-  /** Visual style variant */
   variant?: "primary" | "secondary" | "ghost";
-  /** Render as link when href is provided */
   href?: string;
-  /** Open in new tab */
   external?: boolean;
   className?: string;
   onClick?: () => void;
@@ -14,15 +11,13 @@ interface ButtonProps {
 }
 
 /**
- * Reusable button with primary/secondary/ghost variants.
- *
- * Why one component instead of separate PrimaryButton, SecondaryButton?
- * The styling differences are small (background/border swap).
- * One component with a variant prop keeps the API surface tiny
- * and prevents visual drift between button styles.
- *
- * Renders as <a> when href is provided, <button> otherwise.
- * This follows HTML semantics: links navigate, buttons act.
+ * Button — Premium hover polish
+ * 
+ * Refinements:
+ * - Longer, more editorial easing
+ * - Subtle lift + shadow on primary actions
+ * - Underline reveal for ghost buttons
+ * - Consistent focus states
  */
 const Button = ({
   children,
@@ -34,15 +29,15 @@ const Button = ({
   ...rest
 }: ButtonProps) => {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-300 focus-ring cursor-pointer";
+    "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] focus-ring cursor-pointer";
 
   const variants = {
     primary:
-      "bg-[#111111] text-white hover:bg-[#2a2a2a] hover:-translate-y-0.5 hover:shadow-lg",
+      "bg-[#111111] text-white shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:bg-[#242424] hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(0,0,0,0.18)]",
     secondary:
-      "border border-[#ECECEC] bg-white text-[#111111] hover:bg-[#FAF8F6] hover:-translate-y-0.5",
+      "border border-[#111111]/10 bg-white/80 text-[#111111] backdrop-blur-xl hover:bg-white hover:-translate-y-1 hover:border-[#111111]/20 hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)]",
     ghost:
-      "text-[#111111] underline-offset-4 hover:underline",
+      "text-[#111111] after:absolute after:bottom-2 after:left-7 after:h-[1px] after:w-0 after:bg-current after:transition-all after:duration-500 hover:after:w-[calc(100%-3.5rem)]",
   };
 
   const classes = cn(base, variants[variant], className);
@@ -55,14 +50,18 @@ const Button = ({
         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         {...rest}
       >
-        {children}
+        <span className="relative z-10 flex items-center gap-2 transition-transform duration-500 group-hover:scale-[1.02]">
+          {children}
+        </span>
       </a>
     );
   }
 
   return (
     <button className={classes} onClick={onClick} {...rest}>
-      {children}
+      <span className="relative z-10 flex items-center gap-2 transition-transform duration-500 group-hover:scale-[1.02]">
+        {children}
+      </span>
     </button>
   );
 };
