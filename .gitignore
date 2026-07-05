@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Production
+dist/
+
+# Logs
+*.log
+
+# Local environment
+.env
+.env.local
+
+# Hermes
+.hermes/
+
+# AI Files
+image.png
+PRD.md
+AGENT.md
+.clinerules
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
