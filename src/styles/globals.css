@@ -70,6 +70,121 @@ a {
   outline-color: #111111;
 }
 
+.hero-editorial {
+  background:
+    linear-gradient(112deg, #fffefd 0%, #fdfbf8 44%, #fbf5ee 100%);
+}
+
+.hero-paper {
+  position: absolute;
+  inset: 0;
+  opacity: 0.062;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 260 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.62' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='.32'/%3E%3C/svg%3E");
+}
+
+.hero-structure-primary {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 42vw;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.24);
+  border-left: 1px solid rgba(126, 111, 92, 0.08);
+  box-shadow: inset 60px 0 120px rgba(255, 255, 255, 0.18), -40px 0 100px rgba(126, 111, 92, 0.02);
+}
+
+.hero-structure-secondary {
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  width: 28vw;
+  height: 64vh;
+  background: rgba(238, 228, 214, 0.12);
+  border-top: 1px solid rgba(126, 111, 92, 0.06);
+  border-right: 1px solid rgba(126, 111, 92, 0.06);
+  box-shadow: inset -40px 40px 100px rgba(255, 255, 255, 0.14), 0 -30px 80px rgba(126, 111, 92, 0.015);
+}
+
+.hero-color-wash {
+  position: absolute;
+  filter: blur(52px);
+  mix-blend-mode: multiply;
+}
+
+.hero-color-wash-warm {
+  top: 12%;
+  left: 50%;
+  width: min(720px, 58vw);
+  height: min(480px, 42vh);
+  border-radius: 42% 58% 36% 64% / 52% 48% 52% 48%;
+  background: #ede1d1;
+  opacity: 0.22;
+  transform: translateX(-50%) rotate(-8deg);
+}
+
+.hero-color-wash-cool {
+  bottom: 18%;
+  right: 14%;
+  width: min(640px, 48vw);
+  height: min(420px, 36vh);
+  border-radius: 58% 42% 64% 36% / 48% 52% 48% 52%;
+  background: #f4ebe2;
+  opacity: 0.18;
+  transform: rotate(12deg);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.024;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(126, 111, 92, 0.18) 79px, rgba(126, 111, 92, 0.18) 80px),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(126, 111, 92, 0.18) 79px, rgba(126, 111, 92, 0.18) 80px);
+  mix-blend-mode: multiply;
+}
+
+.hero-light-field {
+  position: absolute;
+  top: -12%;
+  left: 50%;
+  width: 64vw;
+  height: 88vh;
+  background: rgba(255, 255, 255, 0.32);
+  filter: blur(86px);
+  opacity: 0.42;
+  transform: translateX(-50%);
+}
+
+.hero-backdrop-type {
+  color: rgba(69, 55, 42, 0.094);
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.68),
+    0 -24px 52px rgba(238, 228, 214, 0.22),
+    0 40px 96px rgba(126, 111, 92, 0.08);
+  mix-blend-mode: multiply;
+}
+
+.hero-backdrop-type::selection {
+  background: transparent;
+}
+
+.hero-portrait-field {
+  border-radius: 46% 54% 50% 50%;
+  background:
+    linear-gradient(104deg, rgba(255, 255, 255, 0.34), rgba(232, 222, 207, 0.13) 48%, rgba(255, 255, 255, 0));
+  filter: blur(42px);
+}
+
+.hero-portrait-paper {
+  border-radius: 34% 66% 42% 58% / 52% 38% 62% 48%;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    inset 0 0 70px rgba(255, 255, 255, 0.18),
+    0 24px 80px rgba(126, 111, 92, 0.025);
+  filter: blur(18px);
+}
+
 .editorial-surface {
   isolation: isolate;
 }

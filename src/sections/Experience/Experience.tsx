@@ -103,38 +103,51 @@ const Experience = () => {
               viewport={{ once: true, amount: 0.1 }}
               className="flex flex-col border-t border-[#111111]/[0.08]"
             >
-              {certifications.map((cert, index) => (
-                <motion.div
-                  key={index}
-                  variants={{
-                    hidden: { opacity: 0, x: 30 },
-                    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
-                  }}
-                  className="group flex flex-col border-b border-[#111111]/[0.08] py-12 transition-all duration-500 hover:border-[#111111]/30 hover:bg-[#FAFAF8]/30"
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#9AA0A6] transition-all duration-500 group-hover:text-[#111111] group-hover:scale-105">
-                      {cert.year}
-                    </span>
-                    {cert.credentialUrl && (
-                      <a
-                        href={cert.credentialUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs font-black uppercase tracking-widest text-[#111111] transition-all duration-300 hover:underline hover:scale-110 focus-ring rounded-sm"
-                      >
-                        Verify
-                      </a>
-                    )}
-                  </div>
-                  <h3 className="mt-6 text-2xl font-black tracking-tighter text-[#111111] transition-all duration-500 group-hover:scale-[1.02] md:text-3xl">
-                    {cert.name}
-                  </h3>
-                  <p className="mt-2 font-serif-display text-xl italic text-[#5F6368] transition-colors duration-500 group-hover:text-[#111111]/80">
-                    {cert.issuer}
-                  </p>
-                </motion.div>
-              ))}
+              {certifications.map((cert, index) => {
+                const certificateHref = cert.href;
+                const Card = certificateHref ? motion.a : motion.div;
+
+                return (
+                  <Card
+                    key={index}
+                    variants={{
+                      hidden: { opacity: 0, x: 30 },
+                      visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    {...(certificateHref
+                      ? {
+                          href: certificateHref,
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                          "aria-label": `Open certificate: ${cert.name}`,
+                        }
+                      : {})}
+                    className="group flex flex-col border-b border-[#111111]/[0.08] py-12 transition-all duration-500 hover:border-[#111111]/30 hover:bg-[#FAFAF8]/30 focus-ring rounded-sm"
+                  >
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#9AA0A6] transition-all duration-500 group-hover:text-[#111111] group-hover:scale-105">
+                        {cert.year}
+                      </span>
+                      {!certificateHref && cert.credentialUrl && (
+                        <a
+                          href={cert.credentialUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-black uppercase tracking-widest text-[#111111] transition-all duration-300 hover:underline hover:scale-110 focus-ring rounded-sm"
+                        >
+                          Verify
+                        </a>
+                      )}
+                    </div>
+                    <h3 className="mt-6 text-2xl font-black tracking-tighter text-[#111111] transition-all duration-500 group-hover:scale-[1.02] md:text-3xl">
+                      {cert.name}
+                    </h3>
+                    <p className="mt-2 font-serif-display text-xl italic text-[#5F6368] transition-colors duration-500 group-hover:text-[#111111]/80">
+                      {cert.issuer}
+                    </p>
+                  </Card>
+                );
+              })}
             </motion.div>
           </div>
 

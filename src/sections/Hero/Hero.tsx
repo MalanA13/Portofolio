@@ -32,20 +32,18 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20"
-      style={{
-        background:
-          "radial-gradient(ellipse 900px 620px at 24% 18%, rgba(238,228,214,0.28), transparent 68%), radial-gradient(ellipse 780px 560px at 72% 38%, rgba(247,243,238,0.62), transparent 70%), radial-gradient(ellipse 920px 520px at 50% 92%, rgba(232,222,207,0.18), transparent 72%), linear-gradient(135deg, #fffefd 0%, #fdfcfb 46%, #faf7f3 100%)",
-      }}
+      className="hero-editorial relative flex min-h-screen items-center justify-center overflow-hidden pt-20"
       aria-label="Introduction"
     >
-      {/* Subtle layered background depth */}
+      {/* Editorial background atmosphere */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-16%] left-[-8%] h-[980px] w-[1040px] rounded-[48%_52%_44%_56%] bg-[#eee4d6]/28 blur-[120px]" />
-        <div className="absolute right-[-12%] bottom-[-20%] h-[900px] w-[1080px] rounded-[56%_44%_52%_48%] bg-[#f7f3ee]/45 blur-[140px]" />
-        <div className="absolute top-[17%] left-1/2 h-[760px] w-[920px] -translate-x-1/2 rounded-[44%_56%_58%_42%] bg-white/35 blur-[120px]" />
-        <div className="absolute inset-0 opacity-[0.035] mix-blend-multiply" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 240 240%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.72%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E")' }} />
-        <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 1200 800%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M-120 540C106 440 228 300 432 340c180 35 220 170 462 82 114-42 222-96 426-82%22 fill=%22none%22 stroke=%22%23b8aa99%22 stroke-opacity=%22.26%22 stroke-width=%221%22/%3E%3C/svg%3E")', backgroundSize: 'cover' }} />
+        <div className="hero-structure-primary" />
+        <div className="hero-structure-secondary" />
+        <div className="hero-color-wash hero-color-wash-warm" />
+        <div className="hero-color-wash hero-color-wash-cool" />
+        <div className="hero-grid" />
+        <div className="hero-paper" />
+        <div className="hero-light-field" />
       </div>
 
       {/* Decorative massive serif text */}
@@ -56,7 +54,7 @@ const Hero = () => {
         className="pointer-events-none absolute top-[44%] left-[46%] z-0 -translate-x-1/2 -translate-y-1/2 w-full text-center"
         aria-hidden="true"
       >
-        <span className="font-serif-display whitespace-nowrap text-[160px] italic font-normal leading-none tracking-tight text-[#463a30]/[0.065] mix-blend-multiply select-none drop-shadow-[0_1px_0_rgba(255,255,255,0.72)] md:text-[300px] lg:text-[440px]">
+        <span className="hero-backdrop-type font-serif-display whitespace-nowrap text-[160px] italic font-normal leading-none tracking-tight select-none md:text-[300px] lg:text-[440px]">
           Hey, there
         </span>
       </motion.div>
@@ -70,7 +68,7 @@ const Hero = () => {
             initial={shouldReduce ? undefined : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={heroTransition(0.5)}
-            className="pointer-events-none absolute top-[45%] left-1/2 z-10 h-[600px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-[46%_54%_50%_50%] bg-[#e8decf]/35 blur-[104px] md:h-[900px] md:w-[1040px]"
+            className="hero-portrait-field pointer-events-none absolute top-[45%] left-1/2 z-10 h-[600px] w-[700px] -translate-x-1/2 -translate-y-1/2 md:h-[900px] md:w-[1040px]"
             aria-hidden="true"
           />
 
@@ -79,10 +77,10 @@ const Hero = () => {
             initial={shouldReduce ? undefined : { opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={heroTransition(0.1)}
-            className="relative z-20 mb-12 w-[510px] max-w-[122vw] md:mb-0 md:w-[740px] md:translate-x-0 lg:w-[950px] lg:translate-x-1"
+            className="relative z-20 mb-12 w-[560px] max-w-[124vw] md:mb-0 md:w-[820px] md:translate-x-0 lg:w-[1040px] lg:translate-x-0"
           >
             <div
-              className="pointer-events-none absolute top-[9%] left-1/2 z-10 h-[78%] w-[48%] -translate-x-1/2 rounded-[42px] bg-white/20 blur-[42px]"
+              className="hero-portrait-paper pointer-events-none absolute top-[9%] left-1/2 z-10 h-[78%] w-[48%] -translate-x-1/2"
               aria-hidden="true"
             />
             {/* Natural rendering for transparent PNG */}

@@ -1,4 +1,10 @@
 import type { Project } from "../types/portfolio";
+import healthpointImg from "../assets/projects/healpoint.jpeg";
+import logisticsImg from "../assets/projects/Logistic_Microservices.jpg";
+import demandForecastingImg from "../assets/projects/Wargikopi.jpeg";
+import pancinginImg from "../assets/projects/Pancingin.jpeg"; 
+import baqiWebsiteImg from "../assets/projects/Baqi.jpeg";
+import smartWasteBinImg from "../assets/projects/SmartWaste.jpeg";
 
 /**
  * Featured projects ordered by PRD priority.
@@ -22,7 +28,7 @@ export const projects: Project[] = [
       "Collaborated with Frontend and AI teams",
     ],
     stack: ["Node.js", "Express.js", "PostgreSQL", "JWT"],
-    image: "", // TODO: Add real screenshot
+    image: healthpointImg,
   },
   {
     title: "Logistics Microservices",
@@ -39,7 +45,7 @@ export const projects: Project[] = [
       "Worked with Jenkins pipeline",
     ],
     stack: ["Express.js", "Docker", "Azure", "Jenkins", "REST API"],
-    image: "",
+    image: logisticsImg,
   },
   {
     title: "Demand Forecasting Wargi Kopi",
@@ -55,7 +61,7 @@ export const projects: Project[] = [
       "Created data visualization",
     ],
     stack: ["JavaScript", "Node.js", "Machine Learning", "Chart.js"],
-    image: "",
+    image: demandForecastingImg,
   },
   {
     title: "Pancingin",
@@ -71,7 +77,7 @@ export const projects: Project[] = [
       "Integrated mobile frontend",
     ],
     stack: ["Node.js", "Express.js", "TypeScript", "Expo"],
-    image: "",
+    image: pancinginImg,
   },
   {
     title: "BAQI Website",
@@ -86,7 +92,7 @@ export const projects: Project[] = [
       "Implemented website independently",
     ],
     stack: ["HTML", "Tailwind CSS", "JavaScript"],
-    image: "",
+    image: baqiWebsiteImg,
   },
   {
     title: "Smart Waste Bin",
@@ -101,6 +107,6 @@ export const projects: Project[] = [
       "Participated in system testing",
     ],
     stack: ["ESP32-CAM", "MobileNetV2", "IoT"],
-    image: "",
+    image: smartWasteBinImg,
   },
 ];
