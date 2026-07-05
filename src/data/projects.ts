@@ -1,5 +1,5 @@
 import type { Project } from "../types/portfolio";
-import healthpointImg from "../assets/projects/healpoint.jpeg";
+import healthpointImg from "../assets/projects/Healpoint.jpeg";
 import logisticsImg from "../assets/projects/Logistic_Microservices.jpg";
 import demandForecastingImg from "../assets/projects/Wargikopi.jpeg";
 import pancinginImg from "../assets/projects/Pancingin.jpeg"; 

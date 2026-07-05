@@ -58,6 +58,7 @@ export interface OrganizationEntry {
   date: string;
   type: string;
   description: string[];
+  image?: string;
 }
 
 export interface Certification {

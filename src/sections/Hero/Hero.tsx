@@ -44,6 +44,11 @@ const Hero = () => {
         <div className="hero-grid" />
         <div className="hero-paper" />
         <div className="hero-light-field" />
+        <div className="hero-editorial-frame" />
+        <div className="hero-cut-layer hero-cut-layer-left" />
+        <div className="hero-cut-layer hero-cut-layer-right" />
+        <div className="hero-guide hero-guide-horizontal" />
+        <div className="hero-guide hero-guide-vertical" />
       </div>
 
       {/* Decorative massive serif text */}
@@ -77,7 +82,7 @@ const Hero = () => {
             initial={shouldReduce ? undefined : { opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={heroTransition(0.1)}
-            className="relative z-20 mb-12 w-[560px] max-w-[124vw] md:mb-0 md:w-[820px] md:translate-x-0 lg:w-[1040px] lg:translate-x-0"
+            className="relative z-10 mb-12 w-[575px] max-w-[122vw] md:mb-0 md:w-[835px] md:translate-x-0 lg:w-[1060px] lg:translate-x-0"
           >
             <div
               className="hero-portrait-paper pointer-events-none absolute top-[9%] left-1/2 z-10 h-[78%] w-[48%] -translate-x-1/2"
@@ -87,7 +92,7 @@ const Hero = () => {
             <img
               src={portraitSrc}
               alt={`Portrait of ${profile.name}`}
-              className="relative z-20 h-auto w-full object-contain"
+              className="relative z-20 h-auto w-full object-contain opacity-95"
               width={640}
               height={832}
               fetchPriority="high"
@@ -100,15 +105,17 @@ const Hero = () => {
             />
           </motion.div>
 
+          <div className="hero-portrait-mask-panel pointer-events-none absolute left-1/2 top-[58%] z-20 h-[26%] w-[92%] -translate-x-1/2" aria-hidden="true" />
+
           {/* Text content positioned flanking the portrait */}
-          <div className="flex w-full flex-col items-center gap-14 md:absolute md:top-[50%] md:-translate-y-1/2 md:flex-row md:justify-between md:gap-0">
+          <div className="flex w-full flex-col items-center gap-14 md:absolute md:top-[52%] md:-translate-y-1/2 md:flex-row md:justify-between md:gap-0">
             
             {/* Left block: availability + name */}
             <motion.div
               initial={shouldReduce ? undefined : { opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={heroTransition(0.4)}
-              className="z-30 flex flex-col items-center gap-6 md:max-w-[430px] md:items-start"
+              className="z-30 flex flex-col items-center gap-6 md:max-w-[390px] md:items-start lg:translate-x-6"
             >
               <Badge dot className="border-[#111111]/5 bg-white/55 px-6 py-3 text-xs tracking-[0.1em] text-[#111111]/75 shadow-sm backdrop-blur-xl">
                 {profile.availability}
@@ -128,7 +135,7 @@ const Hero = () => {
               initial={shouldReduce ? undefined : { opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={heroTransition(0.5)}
-              className="z-30 flex max-w-[380px] flex-col items-center gap-10 md:items-end md:text-right"
+              className="z-30 flex max-w-[440px] flex-col items-center gap-10 md:items-end md:text-right lg:-translate-x-6"
             >
               <p className="text-[1rem] font-medium leading-[1.8] text-[#111111]/60 md:max-w-[280px]">
                 {profile.tagline}

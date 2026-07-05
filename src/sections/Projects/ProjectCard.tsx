@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Code2, ExternalLink, ArrowRight } from "lucide-react";
 import type { Project } from "../../types/portfolio";
 import { cn } from "../../utils/cn";
+import ImageLightbox from "../../components/ui/ImageLightbox";
 
 interface ProjectCardProps {
   project: Project;
@@ -18,6 +20,7 @@ interface ProjectCardProps {
  */
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const isEven = index % 2 === 0;
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   return (
     <div className={cn("group flex flex-col gap-12 lg:gap-20", isEven ? "lg:flex-row" : "lg:flex-row-reverse")}>
@@ -26,12 +29,19 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       <div className="w-full lg:w-[60%] shrink-0">
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-[#FAFAF8] shadow-[0_8px_32px_rgba(0,0,0,0.06)] ring-1 ring-[#111111]/[0.03] transition-all duration-700 hover:shadow-[0_24px_64px_rgba(0,0,0,0.12)] hover:ring-[#111111]/[0.08]">
           {project.image ? (
-            <img
-              src={project.image}
-              alt={project.title}
-              loading="lazy"
-              className="h-full w-full object-cover transition-all duration-1000 ease-out group-hover:scale-[1.06] group-hover:brightness-[1.02]"
-            />
+            <button
+              type="button"
+              onClick={() => setIsLightboxOpen(true)}
+              className="block h-full w-full cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-[#111111]/30 focus:ring-offset-2"
+              aria-label={`Open ${project.title} image preview`}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                className="h-full w-full object-cover transition-all duration-1000 ease-out group-hover:scale-[1.06] group-hover:brightness-[1.02]"
+              />
+            </button>
           ) : (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-[#FAFAF8] to-[#F3EBE1] p-10 text-center transition-transform duration-1000 ease-out group-hover:scale-[1.04]">
               <span className="font-serif-display text-4xl font-bold italic text-[#111111]/20 md:text-5xl">
@@ -117,7 +127,14 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           )}
         </div>
       </div>
-      
+      {project.image && (
+        <ImageLightbox
+          src={project.image}
+          alt={project.title}
+          isOpen={isLightboxOpen}
+          onClose={() => setIsLightboxOpen(false)}
+        />
+      )}
     </div>
   );
 };

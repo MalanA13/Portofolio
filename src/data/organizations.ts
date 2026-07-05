@@ -1,4 +1,7 @@
 import type { OrganizationEntry } from "../types/portfolio";
+import formaciImg from "../assets/organizations/Formaci.jpeg";
+import baqiStaffImg from "../assets/organizations/BaqiStaff.jpeg";
+import mokakuImg from "../assets/organizations/Mokaku.jpeg";
 
 /**
  * Organizations and volunteer experience, newest first.
@@ -14,6 +17,7 @@ export const organizations: OrganizationEntry[] = [
       "Designed promotional posters",
       "Created visual communication materials",
     ],
+    image: formaciImg,
   },
   {
     role: "Secretariat Staff",
@@ -26,6 +30,7 @@ export const organizations: OrganizationEntry[] = [
       "Supported administrative operations",
       "Maintained equipment records",
     ],
+    image: baqiStaffImg,
   },
   {
     role: "Logistics Staff",
@@ -38,5 +43,6 @@ export const organizations: OrganizationEntry[] = [
       "Distributed equipment",
       "Collaborated during university orientation",
     ],
+    image: mokakuImg,
   },
 ];

@@ -1,5 +1,6 @@
 import type { Certification } from "../types/portfolio";
 
+
 /**
  * Certifications and completed courses.
  * To add a new certificate, append an object here.

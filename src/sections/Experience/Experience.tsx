@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { organizations } from "../../data/organizations";
 import { certifications } from "../../data/certifications";
 import Container from "../../components/common/Container";
 import SectionHeader from "../../components/common/SectionHeader";
 import FadeIn from "../../components/animations/FadeIn";
+import ImageLightbox from "../../components/ui/ImageLightbox";
 import { staggerContainer } from "../../lib/motion";
 
 /**
@@ -16,7 +18,10 @@ import { staggerContainer } from "../../lib/motion";
  * - Consistent with About/Skills polish
  */
 const Experience = () => {
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+
   return (
+    <>
     <section id="experience" className="editorial-surface surface-experience relative overflow-hidden py-32 lg:py-48">
       
       {/* Subtle ambient lighting */}
@@ -60,7 +65,24 @@ const Experience = () => {
                       {org.type}
                     </p>
                   </div>
-                  <div className="sm:w-2/3">
+                   <div className="sm:w-2/3">
+                    {org.image && (
+                      <button
+                        type="button"
+                        onClick={() => setLightboxImage({ src: org.image!, alt: org.organization })}
+                        className="group/img mb-8 block w-full cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-[#111111]/30 focus:ring-offset-2 rounded-2xl"
+                        aria-label={`Open ${org.organization} image preview`}
+                      >
+                        <div className="aspect-[16/10] overflow-hidden rounded-2xl bg-[#FAFAF8] shadow-[0_12px_40px_rgba(17,17,17,0.08)] ring-1 ring-[#111111]/[0.04] transition-all duration-700 hover:shadow-[0_20px_56px_rgba(17,17,17,0.14)]">
+                          <img
+                            src={org.image}
+                            alt={org.organization}
+                            loading="lazy"
+                            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover/img:scale-[1.04]"
+                          />
+                        </div>
+                      </button>
+                    )}
                     <h3 className="text-2xl font-black tracking-tighter text-[#111111] transition-all duration-500 group-hover:scale-[1.02] md:text-3xl">
                       {org.role}
                     </h3>
@@ -104,7 +126,7 @@ const Experience = () => {
               className="flex flex-col border-t border-[#111111]/[0.08]"
             >
               {certifications.map((cert, index) => {
-                const certificateHref = cert.href;
+                const certificateHref = cert.href ?? (cert.credentialUrl?.includes("drive.google.com") ? cert.credentialUrl : undefined);
                 const Card = certificateHref ? motion.a : motion.div;
 
                 return (
@@ -154,6 +176,15 @@ const Experience = () => {
         </div>
       </Container>
     </section>
+    {lightboxImage && (
+      <ImageLightbox
+        src={lightboxImage.src}
+        alt={lightboxImage.alt}
+        isOpen={Boolean(lightboxImage)}
+        onClose={() => setLightboxImage(null)}
+      />
+    )}
+    </>
   );
 };
 
