@@ -35,31 +35,22 @@ const Hero = () => {
       className="hero-editorial relative flex min-h-screen items-center justify-center overflow-hidden pt-20"
       aria-label="Introduction"
     >
-      {/* Editorial background atmosphere */}
+      {/* Simplified modern background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="hero-structure-primary" />
-        <div className="hero-structure-secondary" />
-        <div className="hero-color-wash hero-color-wash-warm" />
-        <div className="hero-color-wash hero-color-wash-cool" />
-        <div className="hero-grid" />
-        <div className="hero-paper" />
-        <div className="hero-light-field" />
-        <div className="hero-editorial-frame" />
-        <div className="hero-cut-layer hero-cut-layer-left" />
-        <div className="hero-cut-layer hero-cut-layer-right" />
-        <div className="hero-guide hero-guide-horizontal" />
-        <div className="hero-guide hero-guide-vertical" />
+        <div className="absolute top-[10%] right-[8%] w-[400px] h-[400px] bg-[var(--accent-primary)] opacity-[0.06] blur-3xl rounded-full" />
+        <div className="absolute bottom-[15%] left-[10%] w-[500px] h-[500px] bg-[var(--accent-secondary)] opacity-[0.05] blur-3xl rounded-full" />
+        <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--accent-tertiary)] opacity-[0.03] blur-3xl rounded-full" />
       </div>
 
-      {/* Decorative massive serif text */}
+      {/* Decorative massive serif text - behind portrait */}
       <motion.div
         initial={shouldReduce ? undefined : { opacity: 0, scale: 0.97 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={heroTransition(0.3)}
-        className="pointer-events-none absolute top-[44%] left-[46%] z-0 -translate-x-1/2 -translate-y-1/2 w-full text-center"
+        className="pointer-events-none absolute top-[18%] left-1/2 z-10 -translate-x-1/2 w-full text-center md:top-[14%]"
         aria-hidden="true"
       >
-        <span className="hero-backdrop-type font-serif-display whitespace-nowrap text-[160px] italic font-normal leading-none tracking-tight select-none md:text-[300px] lg:text-[440px]">
+        <span className="hero-backdrop-type font-serif-display whitespace-nowrap text-[120px] italic font-normal leading-none tracking-tight select-none md:text-[180px] lg:text-[240px]">
           Hey, there
         </span>
       </motion.div>
@@ -77,17 +68,13 @@ const Hero = () => {
             aria-hidden="true"
           />
 
-          {/* Portrait Centerpiece */}
+          {/* Portrait Centerpiece - main hero focal point */}
           <motion.div
             initial={shouldReduce ? undefined : { opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={heroTransition(0.1)}
-            className="relative z-10 mb-12 w-[575px] max-w-[122vw] md:mb-0 md:w-[835px] md:translate-x-0 lg:w-[1060px] lg:translate-x-0"
+            className="relative z-30 mb-12 w-[600px] max-w-[122vw] md:mb-0 md:w-[780px] lg:w-[960px] md:-ml-15 lg:-ml-20"
           >
-            <div
-              className="hero-portrait-paper pointer-events-none absolute top-[9%] left-1/2 z-10 h-[78%] w-[48%] -translate-x-1/2"
-              aria-hidden="true"
-            />
             {/* Natural rendering for transparent PNG */}
             <img
               src={portraitSrc}
@@ -105,24 +92,22 @@ const Hero = () => {
             />
           </motion.div>
 
-          <div className="hero-portrait-mask-panel pointer-events-none absolute left-1/2 top-[58%] z-20 h-[26%] w-[92%] -translate-x-1/2" aria-hidden="true" />
-
           {/* Text content positioned flanking the portrait */}
-          <div className="flex w-full flex-col items-center gap-14 md:absolute md:top-[52%] md:-translate-y-1/2 md:flex-row md:justify-between md:gap-0">
+          <div className="flex w-full flex-col items-center gap-14 md:absolute md:top-[54%] md:-translate-y-1/2 md:flex-row md:justify-between md:gap-12 lg:gap-20 xl:gap-32">
             
             {/* Left block: availability + name */}
             <motion.div
               initial={shouldReduce ? undefined : { opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={heroTransition(0.4)}
-              className="z-30 flex flex-col items-center gap-6 md:max-w-[390px] md:items-start lg:translate-x-6"
+              className="z-40 flex flex-col items-center gap-6 md:max-w-[390px] md:items-start"
             >
-              <Badge dot className="border-[#111111]/5 bg-white/55 px-6 py-3 text-xs tracking-[0.1em] text-[#111111]/75 shadow-sm backdrop-blur-xl">
+              <Badge dot className="border-[var(--accent-primary)]/20 bg-[var(--accent-primary)]/10 px-6 py-3 text-xs tracking-[0.1em] text-[var(--accent-primary)] shadow-sm backdrop-blur-xl font-bold">
                 {profile.availability}
               </Badge>
 
               <h1 className="text-center text-[4.5rem] font-black uppercase leading-[0.75] tracking-tighter text-[#111111] drop-shadow-sm md:text-left md:text-[6.5rem] lg:text-[8.5rem]">
-                I AM
+                I'M
                 <br />
                 <span className="font-serif-display font-medium italic tracking-tight pr-4">
                   {profile.shortName}
@@ -135,7 +120,7 @@ const Hero = () => {
               initial={shouldReduce ? undefined : { opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={heroTransition(0.5)}
-              className="z-30 flex max-w-[440px] flex-col items-center gap-10 md:items-end md:text-right lg:-translate-x-6"
+              className="z-40 flex max-w-[440px] flex-col items-center gap-10 md:items-end md:text-right"
             >
               <p className="text-[1rem] font-medium leading-[1.8] text-[#111111]/60 md:max-w-[280px]">
                 {profile.tagline}
@@ -159,7 +144,7 @@ const Hero = () => {
           transition={heroTransition(0.7)}
           className="relative z-30 mt-20 flex flex-wrap items-center justify-center gap-6 pb-14"
         >
-          <Button href="#projects" variant="secondary" className="border-[#111111]/10 bg-white/50 px-10 py-4 text-sm font-bold uppercase tracking-[0.16em] text-[#111111] shadow-[0_10px_28px_rgba(17,17,17,0.06)] backdrop-blur-xl">
+          <Button href="#projects" variant="secondary" className="border-[var(--accent-primary)]/20 bg-[var(--accent-primary)]/10 px-10 py-4 text-sm font-bold uppercase tracking-[0.16em] text-[var(--accent-primary)] shadow-[0_10px_28px_rgba(255,107,107,0.15)] backdrop-blur-xl hover:bg-[var(--accent-primary)]/20 transition-all duration-300">
             View Projects
             <ArrowDown size={18} className="ml-3" />
           </Button>

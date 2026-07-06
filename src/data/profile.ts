@@ -24,7 +24,6 @@ export const profile: Profile = {
     { label: "Major", value: "Computer Science" },
     { label: "Semester", value: "Semester 5" },
     { label: "Location", value: "Bandung, Indonesia" },
-    { label: "Goal", value: "Full Stack Web Developer" },
   ],
 
   socials: [
