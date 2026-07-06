@@ -28,10 +28,10 @@ export const profile: Profile = {
 
   socials: [
     // TODO: Replace with real URLs when available
-    // { label: "GitHub", href: "https://github.com/alanandika", icon: "Github" },
-    // { label: "LinkedIn", href: "https://linkedin.com/in/alanandika", icon: "Linkedin" },
+    { label: "GitHub", href: "https://github.com/MalanA13", icon: "Github" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/muhammad-alan-andika", icon: "Linkedin" },
   ],
 
-  email: "", // TODO: Add real email
-  resumeUrl: "", // TODO: Add real CV link
+  email: "malanandika13@gmail.com", // TODO: Add real email
+  resumeUrl: "https://drive.google.com/file/d/1y83V--WPBQhV7vJf4XI65aQKWuMsvabb/view?usp=sharing", // TODO: Add real CV link
 };
