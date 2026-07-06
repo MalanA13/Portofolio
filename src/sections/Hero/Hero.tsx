@@ -5,7 +5,7 @@ import { ArrowDown } from "lucide-react";
 import { profile } from "../../data/profile";
 import Badge from "../../components/ui/Badge";
 import Button from "../../components/ui/Button";
-import portraitSrc from "../../assets/profile/alan.png";
+import portraitSrc from "../../assets/profile/alan.webp";
 
 /**
  * Hero — Art Direction Polish (Asymmetry, Layered Light, Depth)
@@ -21,7 +21,7 @@ import portraitSrc from "../../assets/profile/alan.png";
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const heroTransition = (delay: number): Transition => ({
-  duration: 1.6, // Slightly slower, more luxurious easing
+  duration: 1.2,
   ease: EASE,
   delay,
 });
@@ -82,7 +82,8 @@ const Hero = () => {
               className="relative z-20 h-auto w-full object-contain opacity-95"
               width={640}
               height={832}
-              fetchPriority="high"
+              loading="eager"
+              decoding="async"
             />
             
             {/* Seamless fade to match the background */}

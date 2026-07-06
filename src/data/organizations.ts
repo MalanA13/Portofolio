@@ -1,7 +1,7 @@
 import type { OrganizationEntry } from "../types/portfolio";
-import formaciImg from "../assets/organizations/Formaci.jpeg";
-import baqiStaffImg from "../assets/organizations/BaqiStaff.jpeg";
-import mokakuImg from "../assets/organizations/Mokaku.jpeg";
+import formaciImg from "../assets/organizations/Formaci.webp";
+import baqiStaffImg from "../assets/organizations/BaqiStaff.webp";
+import mokakuImg from "../assets/organizations/Mokaku.webp";
 
 /**
  * Organizations and volunteer experience, newest first.

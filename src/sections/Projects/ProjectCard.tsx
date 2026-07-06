@@ -39,6 +39,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 src={project.image}
                 alt={project.title}
                 loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover transition-all duration-1000 ease-out group-hover:scale-[1.06] group-hover:brightness-[1.02]"
               />
             </button>

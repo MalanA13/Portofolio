@@ -10,20 +10,20 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "latest",
-    "framer-motion": "latest",
-    "lenis": "latest",
-    "lucide-react": "latest",
     "@vitejs/plugin-react": "latest",
+    "framer-motion": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "tailwindcss": "latest",
     "typescript": "latest",
-    "vite": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "vite": "latest"
   },
   "devDependencies": {
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "eslint": "latest",
-    "prettier": "latest"
+    "prettier": "latest",
+    "sharp": "^0.35.3"
   }
 }

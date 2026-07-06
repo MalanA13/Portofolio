@@ -1,10 +1,10 @@
 import type { Project } from "../types/portfolio";
-import healthpointImg from "../assets/projects/Healpoint.jpeg";
-import logisticsImg from "../assets/projects/Logistic_Microservices.jpg";
-import demandForecastingImg from "../assets/projects/Wargikopi.jpeg";
-import pancinginImg from "../assets/projects/Pancingin.jpeg"; 
-import baqiWebsiteImg from "../assets/projects/Baqi.jpeg";
-import smartWasteBinImg from "../assets/projects/SmartWaste.jpeg";
+import healthpointImg from "../assets/projects/Healpoint.webp";
+import logisticsImg from "../assets/projects/Logistic_Microservices.webp";
+import demandForecastingImg from "../assets/projects/Wargikopi.webp";
+import pancinginImg from "../assets/projects/Pancingin.webp"; 
+import baqiWebsiteImg from "../assets/projects/Baqi.webp";
+import smartWasteBinImg from "../assets/projects/SmartWaste.webp";
 
 /**
  * Featured projects ordered by PRD priority.

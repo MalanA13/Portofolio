@@ -15,11 +15,11 @@ export const easing: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 /** Standard section/element entrance: fade up from 40px below */
 export const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: easing },
+    transition: { duration: 0.5, ease: easing },
   },
 };
 
@@ -48,7 +48,7 @@ export const staggerContainer = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.08,
+      staggerChildren: 0.05,
     },
   },
 };
